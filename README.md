@@ -6,3 +6,5 @@ Our dataset is credited below and was accessed through figshare.
 
 > Strona, Giovanni; MAURI, ACHILLE; San-Miguel-Ayanz, Jesús (2016): A high-resolution pan-European tree occurrence dataset. figshare. Collection. https://doi.org/10.6084/m9.figshare.c.3288407.v1 
 
+## Requirements
+Must have downloaded pandas, numpy, pyproj, geopandas
