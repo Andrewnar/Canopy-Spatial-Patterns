@@ -1,0 +1,28 @@
+EU-Forest Metadata Descriptor
+Here we provide a summary of the metadata description for the four datasets released in figshare.
+
+1)	Tree Occurrences at species level (csv format)
+
+Filename: 	EU-Forest-species.csv
+
+Coordinates: 	X, Y
+
+Coordinates in a ETRS89-LAEA reference coordinate system (EPSG:3015), representing the centroid of the INSPIRE compliant 1 km ×1 km European grid
+
+Species name: 	Occurrences at the level of species
+
+Dbh: 		Diameter at breast height of the trunk
+
+The class for the diameter at breast height (DBH) of the trunk, which is used to distinguish a new recruit of a given tree. This is presented with two columns: DBH-1 for trunks with diameter smaller than 120 mm and DBH-2 for trunks with diameter larger than 120 mm. The value 1 is used for records with known diameters, and value -9999 for trunks with unknown diameters.
+Db Name: 	Name of the database to which the occurrences are belonging to.
+These includes 3 columns, name after the datasets: NFI for National Forest Inventory dataset, FF for Forest Focus and BS for Biosoil
+
+EOO: 		Extent of Occurrence for each species
+
+Binary field stating whether or not the target occurrence falls within the species geographical range, measured as the extent of occurrence (EOO, see Technical validation paragraph for details).
+
+2)	Tree Occurrences at genus level (csv format)
+Filename: 	EU-Forest-genus.csv
+Coordinates: 	X, Y
+Coordinates in a ETRS89-LAEA reference coordinate system (EPSG:3015), representing the centroid of the INSPIRE compliant 1 km ×1 km European grid
+Genus name: 	Occurrences at the level of species
