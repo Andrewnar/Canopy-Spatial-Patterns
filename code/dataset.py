@@ -7,7 +7,7 @@ def load_species(data_file, species_name, inProj, outProj):
     with open(data_file) as f:
         data = []
         for line in f:
-            line = line.split(",")[:10]
+            line = line.split(",")[:9]
             if(species_name != "ALL" and species_name != str(line[3])):
                 continue
 
@@ -26,37 +26,6 @@ def load_species(data_file, species_name, inProj, outProj):
             x2, y2 = proj.transform(x1, y1)
             line[1], line[0] = (x2, y2)
 
-            #======= osgeo
-
-
-            # pointX = float(line[0])
-            # pointY = float(line[1])
-
-            # # Spatial Reference System
-            # inputEPSG = 3015
-            # outputEPSG = 4326
-
-            # point = ogr.Geometry(ogr.wkbPoint)
-            # point.AddPoint(pointX, pointY)
-
-            # # create coordinate transformation
-            # inSpatialRef = osr.SpatialReference()
-            # inSpatialRef.ImportFromEPSG(inputEPSG)
-
-            # outSpatialRef = osr.SpatialReference()
-            # outSpatialRef.ImportFromEPSG(outputEPSG)
-
-            # coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
-
-            # # transform point
-            # point.Transform(coordTransform)
-
-            # # print point in EPSG 4326
-            # print(point.GetX(), point.GetY())
-
-
-
-            
             data.append(line)
         data = np.array(data)
     return data
@@ -64,3 +33,15 @@ def load_species(data_file, species_name, inProj, outProj):
 def df_to_file(df, target):
     data = np.array(df)
     np.savetxt(target, data, delimiter = ",", fmt = '%s')
+
+def clean_file(data_file, target):
+    with open(data_file) as f:
+        data = []
+        data.append(["X","Y","COUNTRY","SPECIES NAME", "DBH-1","DBH-2","NFI","FF","BS"])
+        for line in f:
+            if(line[0] == '\n'):
+                continue
+            line = line.split(",")[:9]
+            data.append(line)
+        data = np.array(data, dtype=object)
+    df_to_file(data, target)
