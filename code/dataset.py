@@ -8,6 +8,8 @@ def load_species(data_file, species_name, inProj, outProj):
         data = []
         for line in f:
             line = line.split(",")[:10]
+            if(species_name != "ALL" and species_name != str(line[3])):
+                continue
 
             #======= pyproj v>2.2
 
@@ -19,10 +21,10 @@ def load_species(data_file, species_name, inProj, outProj):
 
             #======= pyproj v<=2.2
 
-            # proj = pyproj.Transformer.from_crs(3015, 4326, always_xy=True)
-            # x1, y1 = (line[0], line[1])
-            # x2, y2 = proj.transform(x1, y1)
-            # line[0], line[1] = (x2, y2)
+            proj = pyproj.Transformer.from_crs(3035, 4326, always_xy=True)
+            x1, y1 = (line[0], line[1])
+            x2, y2 = proj.transform(x1, y1)
+            line[1], line[0] = (x2, y2)
 
             #======= osgeo
 
@@ -54,8 +56,8 @@ def load_species(data_file, species_name, inProj, outProj):
 
 
 
-            if(species_name == "ALL" or species_name == str(line[3])):
-                data.append(line)
+            
+            data.append(line)
         data = np.array(data)
     return data
     
