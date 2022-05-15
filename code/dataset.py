@@ -30,6 +30,14 @@ def load_species(data_file, species_name, inProj, outProj):
         data = np.array(data)
     return data
     
+def load_weather(data_file):
+    with open(data_file) as f:
+        data = []
+        for line in f:
+            data.append(line)
+        data = np.array(data)
+    return data
+
 def df_to_file(df, target):
     data = np.array(df)
     np.savetxt(target, data, delimiter = ",", fmt = '%s')
