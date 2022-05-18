@@ -53,3 +53,4 @@ def clean_file(data_file, target):
             data.append(line)
         data = np.array(data, dtype=object)
     df_to_file(data, target)
+
