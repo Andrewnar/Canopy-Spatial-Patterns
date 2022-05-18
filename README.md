@@ -1,6 +1,8 @@
 # Canopy-Spatial-Patterns
 Modeling Spatial Patterns on Tree Canopy of Evergreen Trees throughout Europe. This project was created for EN-250 with our team of *Michael Bearint, Daniel Partika, Andrew Narvaez, and Johnny Wong.*
 
+Any further inquiries on our research possible or any possible questions can sent to *anarvaez@stevens.edu*. Feel free to reach out!
+
 ## Dataset
 Our Tree dataset is credited below and was accessed through figshare. 
 
